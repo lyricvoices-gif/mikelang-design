@@ -1,0 +1,315 @@
+[
+  {
+    "id": "lyric-composer",
+    "slug": "lyric",
+    "contentType": "case-study",
+    "tier": 1,
+    "featured": true,
+    "title": "Lyric Voices — Composer",
+    "subtitle": "Direction happens before you write.",
+    "client": "Lyric Voices",
+    "role": "Co-founder · Product Design · Creative Direction",
+    "year": 2024,
+    "yearEnd": 2026,
+    "ongoing": true,
+    "discipline": ["Product Design", "Multimodal Design", "Creative Direction"],
+    "sector": "Independent",
+    "type": "Case Study",
+    "tags": ["AI Voice", "Ethical AI", "Product Design", "Founder", "Conversational AI", "Audio", "SaaS"],
+    "designerToBuilder": true,
+    "buildNote": "Michael co-founded Lyric and built significant portions of the product directly using AI tools. This is both a case study and a build.",
+    "shortDescription": "An ethical AI voice platform built on real artist partnerships. Five voices, fifteen tonal directions. Composed, not cloned.",
+    "challenge": "AI voice tools optimize for realism but not for performance. Creators have no craft layer — no way to direct a voice the way a director directs a take. And most platforms are built on scraped data and unclear ethics.",
+    "insight": "Output is not the same as performance. Direction has to happen before you write — not after. The intent you set shapes everything that follows.",
+    "approach": "Built the Composer around a three-step model: choose the character (voice), set the intent (tonal direction), then write and direct inline. Designed the Edition system to release voices in curated, finite collections built with real professional artists under licensing and revenue-sharing agreements.",
+    "outcome": "Live product with Creator ($29/mo), Studio ($99/mo), and Enterprise tiers. Edition 01 ships five voices with three tonal variants each. Edition 02 in development.",
+    "reflection": "The hardest design problem wasn't the interface — it was making 'direction' feel real and intuitive before a single word is written. Inline emotion marks were the breakthrough: they give writers a way to shape a performance mid-script without switching context.",
+    "liveUrl": "https://composer.lyricvoices.ai",
+    "marketingUrl": "https://www.lyricvoices.ai/composer",
+    "editionsUrl": "https://www.lyricvoices.ai/editions",
+    "heroBackground": "dark",
+    "heroMedia": {
+      "type": "placeholder",
+      "note": "TODO: Replace with Lyric Composer UI screenshot or demo recording",
+      "aspectRatio": "16/9"
+    },
+    "media": [
+      {
+        "type": "placeholder",
+        "caption": "Composer interface — voice selection and intent setting",
+        "note": "TODO: Replace with approved Composer UI screenshot",
+        "aspectRatio": "16/9"
+      },
+      {
+        "type": "placeholder",
+        "caption": "Edition 01 — five voice archetypes",
+        "note": "TODO: Replace with Edition voice cards visual",
+        "aspectRatio": "4/3"
+      },
+      {
+        "type": "placeholder",
+        "caption": "Inline emotion marks — directing mid-script",
+        "note": "TODO: Replace with approved UI detail",
+        "aspectRatio": "16/9"
+      }
+    ],
+    "product": {
+      "tagline": "Composed, not cloned.",
+      "composerUrl": "https://composer.lyricvoices.ai",
+      "ethicsStatement": "Every Edition 01 voice is fully licensed from real professional artists. They are credited, paid, and share in ongoing revenue. No scraping. No surprises. Scripts and generated audio are never used to train third-party AI models.",
+      "editions": [
+        {
+          "number": 1,
+          "status": "available",
+          "voiceCount": 5,
+          "voices": [
+            {
+              "name": "Morgan",
+              "archetype": "The Anchor",
+              "description": "Built for the moments that need to be believed. Maintains credibility across podcasts, brand storytelling, and service experiences.",
+              "tones": ["Authoritative", "Warm", "Composed"],
+              "useCases": ["Podcast & Content Hosting", "Professional Brand Voice", "Hospitality & Service"],
+              "sampleUrl": "https://pub-af25e52138fa41559b794877a8400712.r2.dev/Voices/edition01/Morgan%20(sample).wav"
+            },
+            {
+              "name": "Nova",
+              "archetype": "The Intimist",
+              "description": "Designed for presence, emotional safety, and authentic care. Creates space for reflection without rushing.",
+              "tones": ["Compassionate", "Encouraging", "Calm"],
+              "useCases": ["Meditation & Wellness", "Personal Brand Storytelling", "Therapeutic Content"],
+              "sampleUrl": "https://pub-af25e52138fa41559b794877a8400712.r2.dev/Voices/edition01/Nova_calm%20(sample).wav"
+            },
+            {
+              "name": "Atlas",
+              "archetype": "The Guide",
+              "description": "Designed for clarity, patience, and credibility. Maintains accessibility across tutorials and educational content.",
+              "tones": ["Patient", "Clear", "Supportive"],
+              "useCases": ["E-Learning & Training", "Tutorial Content", "Product Education"],
+              "sampleUrl": "https://pub-af25e52138fa41559b794877a8400712.r2.dev/Voices/edition01/Atlas_sample.wav"
+            },
+            {
+              "name": "Riven",
+              "archetype": "The Narrator",
+              "description": "Designed for depth, texture, and narrative weight. Carries emotional arc across fiction, documentary, and character work.",
+              "tones": ["Intrigue", "Tension", "Wonder"],
+              "useCases": ["Fiction & Audiobooks", "Documentary Narration", "Character & Game Voice"],
+              "sampleUrl": "https://pub-af25e52138fa41559b794877a8400712.r2.dev/Voices/edition01/Riven%20(sample).wav"
+            },
+            {
+              "name": "Hex",
+              "archetype": "The Wildcard",
+              "description": "Designed for edge, personality, and tonal agility. Shifts seamlessly across brand content, gaming, and experimental work.",
+              "tones": ["Playful", "Ironic", "Bold"],
+              "useCases": ["Independent Content Creators", "Emerging Creator Brands", "Commentary & Analysis"],
+              "sampleUrl": "https://pub-af25e52138fa41559b794877a8400712.r2.dev/Voices/edition01/Hex%20(sample).wav"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "status": "in-development",
+          "voices": [
+            {
+              "name": "Sage",
+              "archetype": "The Wise",
+              "tones": ["Measured", "Reflective", "Knowing"]
+            },
+            {
+              "name": "Echo",
+              "archetype": "The Bright",
+              "tones": ["Playful", "Warm", "Energetic"]
+            }
+          ]
+        }
+      ],
+      "pricing": [
+        {
+          "plan": "Creator",
+          "price": 29,
+          "period": "mo",
+          "highlights": ["All 5 Edition 01 voices", "25 generations/day", "Scripts up to 500 characters", "Commercial use rights", "MP3 download"]
+        },
+        {
+          "plan": "Studio",
+          "price": 99,
+          "period": "mo",
+          "highlights": ["Everything in Creator", "100 generations/day", "Scripts up to 2,000 characters", "Premium quality rendering", "Early access to new Editions"]
+        },
+        {
+          "plan": "Enterprise",
+          "price": null,
+          "period": null,
+          "highlights": ["Everything in Studio", "Unlimited generations", "Scripts up to 10,000 characters", "Custom voice creation", "API access & SSO"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "ai-skill-doc",
+    "slug": "ai-skill-doc",
+    "contentType": "build",
+    "featured": true,
+    "title": "AI Agent Skill Doc Generator",
+    "subtitle": "Engineering was writing the design artifact. Now designers can.",
+    "context": "AppFolio",
+    "year": 2025,
+    "artifactType": "Claude Skill",
+    "tools": ["Claude", "Claude Code"],
+    "shareable": true,
+    "shareableNote": "Not proprietary to AppFolio. Applicable anywhere a designer is contributing to an AI agent's orchestration layer.",
+    "problem": "AppFolio designers were building AI agents that required a skill — an orchestration and execution layer that activates when the agent is triggered. To ship the skill, Engineering needed a design exemplar doc precise enough to incorporate into the master system prompt. None of the designers had experience writing this artifact. Engineering was writing it instead, removing design intent from the thing that most directly shapes how the agent behaves.",
+    "whatWasBuilt": "A Claude skill that designers open in Claude Code. It walks them through a guided conversation, asking the questions necessary to produce a complete exemplar doc ready for engineering handoff. The skill educates along the way — explaining what the orchestration layer is, why each piece of the document matters, and how their design decisions will directly influence agent behavior.",
+    "outcome": "Designers at AppFolio can now produce the exemplar doc themselves — with understanding, not just a filled-in template. Engineering receives a design-authored artifact. The handoff is cleaner and the agent behavior is more intentional.",
+    "whyItMatters": "Any designer contributing the UX layer to an AI agent's orchestration skill faces this same gap. The skill is domain-agnostic and reusable. It represents a broader pattern in Michael's work: identifying where design intent is being lost in the AI build process and building the tool that puts it back.",
+    "liveUrl": null,
+    "liveUrlNote": "TODO: Add link when published publicly"
+  },
+  {
+    "id": "alexa-hospitality",
+    "slug": "alexa-hospitality",
+    "contentType": "case-study",
+    "tier": 2,
+    "featured": true,
+    "title": "Alexa+ Enterprise — Hospitality AI Agent",
+    "subtitle": "Designing how GenAI makes a stay feel human.",
+    "client": "Amazon",
+    "role": "Multimodal AI Experience Designer",
+    "year": 2025,
+    "ongoing": true,
+    "discipline": ["Multimodal Design", "Conversational AI", "Product Design"],
+    "sector": "Consumer GenAI",
+    "type": "Case Study",
+    "tags": ["Alexa+", "Amazon", "GenAI", "Hospitality", "Voice", "Multimodal", "Enterprise"],
+    "shortDescription": "Led design of how GenAI could make hotel and cruise stays feel more personal and human — from LLM guest scenarios to partner-facing story demonstrations.",
+    "challenge": "How do you design an AI agent that feels genuinely helpful and warm across the unpredictable range of moments in a hotel or cruise stay?",
+    "approach": "Created guest scenarios that trained the LLM to understand customer intent and respond with warmth. Designed multimodal experiences combining voice and touch. Built story-led demonstrations to help enterprise partners see their brand through Alexa+.",
+    "outcome": "Working experience guiding guests through real moments — booking tables, planning excursions, unwinding — across hospitality verticals.",
+    "ndaNote": "Descriptions are high-level and process-focused per NDA. All asset slots marked for replacement.",
+    "heroMedia": {
+      "type": "placeholder",
+      "note": "TODO: Replace with approved hero image",
+      "existingPlaceholder": "https://framerusercontent.com/images/F69tlLbBKmurd0w3hO5WvCL0.jpg",
+      "aspectRatio": "4/3"
+    },
+    "heroVideo": {
+      "type": "placeholder",
+      "note": "TODO: Confirm if approved for use",
+      "existingPlaceholder": "https://pub-b4a7e083f0084e77858de3be500c7acd.r2.dev/pete_davidson_alexa_ad.mp4"
+    },
+    "media": [
+      { "type": "placeholder", "note": "TODO: Replace with approved asset", "aspectRatio": "16/9" },
+      { "type": "placeholder", "note": "TODO: Replace with approved asset", "aspectRatio": "16/9" },
+      { "type": "placeholder", "note": "TODO: Replace with approved asset", "aspectRatio": "16/9" }
+    ],
+    "services": ["Multimodal Design", "Conversational AI", "Exemplar Writing", "Visual Design", "Rapid Prototyping"]
+  },
+  {
+    "id": "alexa-vignettes",
+    "slug": "alexa-vignettes",
+    "contentType": "case-study",
+    "tier": 3,
+    "featured": false,
+    "title": "Alexa+ Enterprise — AI Agent Vignettes",
+    "subtitle": "Narrative design for enterprise AI sales.",
+    "client": "Amazon",
+    "role": "Multimodal AI Experience Designer",
+    "year": 2025,
+    "ongoing": true,
+    "discipline": ["Creative Direction", "Multimodal Design", "Conversational AI"],
+    "sector": "Consumer GenAI",
+    "type": "Case Study",
+    "tags": ["Alexa+", "Amazon", "GenAI", "Creative Direction", "Storytelling", "Enterprise"],
+    "shortDescription": "Wrote and directed narrative vignettes showing how brands and destinations would feel as living voice experiences through Alexa+.",
+    "approach": "Crafted scripted voice interactions, prototypes, and AI persona creation for hospitality and telecom verticals. Collaborated with video production agencies to creatively direct partner-facing marketing videos.",
+    "ndaNote": "High-level descriptions only. All assets marked for replacement.",
+    "heroMedia": {
+      "type": "placeholder",
+      "note": "TODO: Replace with approved hero image",
+      "existingPlaceholder": "https://framerusercontent.com/images/KEwQrCVuJ38qamc6N9axKsU3F0.png",
+      "aspectRatio": "16/9"
+    },
+    "services": ["Concept", "Multimodal Design", "Creative Direction", "Art Direction", "Motion Design", "Rapid Prototyping"]
+  },
+  {
+    "id": "bmw-concierge",
+    "slug": "bmw-concierge",
+    "contentType": "case-study",
+    "tier": 2,
+    "featured": true,
+    "title": "BMW Concierge — AI Powered App",
+    "subtitle": "A more human way to stay connected to your car.",
+    "client": "BMW Group",
+    "role": "Lead Designer",
+    "year": 2021,
+    "discipline": ["Product Design", "Conversational AI", "Multimodal Design"],
+    "sector": "Consumer AI App",
+    "type": "Case Study",
+    "tags": ["BMW", "Automotive", "Conversational AI", "App Design", "Mobile", "Product Design"],
+    "shortDescription": "Defined how the BMW Intelligent Personal Assistant should live inside the BMW Connected app — shaping an assistant that feels intuitive, supportive, and distinctly BMW.",
+    "challenge": "How do you give drivers a simple, conversational way to understand and manage a premium vehicle without feeling clinical or transactional?",
+    "approach": "Shaped how the assistant speaks, responds, and guides drivers through everyday moments. Wrote example dialogs, defined interaction patterns, designed the conversational model, and translated that into high-fidelity mobile prototypes. Partnered with teams in Munich and the U.S.",
+    "outcome": "A clearer vision for a cross-platform companion connecting car, app, and driver through a more unified, human-centered experience.",
+    "ndaNote": "High-level descriptions only. All assets marked for replacement.",
+    "externalLink": {
+      "label": "View Case Study PDF",
+      "url": "https://pub-a2f7fa8079ba454da09eff972db276aa.r2.dev/IPA_Case_Study.pdf"
+    },
+    "heroMedia": {
+      "type": "placeholder",
+      "note": "TODO: Replace with approved hero image",
+      "existingPlaceholder": "https://framerusercontent.com/images/zkUc82SaWAucSRyWm0zF21lFS0.webp",
+      "aspectRatio": "16/9"
+    },
+    "heroVideo": {
+      "type": "placeholder",
+      "note": "TODO: Confirm if approved for use",
+      "existingPlaceholder": "https://pub-b4a7e083f0084e77858de3be500c7acd.r2.dev/bmw_intelligence_personal_assistant.mp4"
+    },
+    "media": [
+      { "type": "placeholder", "note": "TODO: Replace with approved asset", "aspectRatio": "16/9" },
+      { "type": "placeholder", "note": "TODO: Replace with approved asset", "aspectRatio": "16/9" },
+      { "type": "placeholder", "note": "TODO: Replace with approved asset", "aspectRatio": "16/9" }
+    ],
+    "services": ["Multimodal Design", "App Design", "Conversational AI", "Visual Design", "Rapid Prototyping"]
+  },
+  {
+    "id": "va-concierge",
+    "slug": "va-concierge",
+    "contentType": "case-study",
+    "tier": 3,
+    "featured": false,
+    "title": "Virgin Atlantic Concierge — AI Agent Amelia",
+    "subtitle": "Conversational AI for premium air travel.",
+    "client": "Virgin Atlantic",
+    "role": "AI Experience Designer",
+    "year": 2024,
+    "discipline": ["Conversational AI", "Product Design"],
+    "sector": "Consumer GenAI",
+    "type": "Case Study",
+    "tags": ["Virgin Atlantic", "Travel", "Conversational AI", "AI Agent", "Product Design"],
+    "shortDescription": "Designed the AI concierge agent experience for Virgin Atlantic, helping passengers navigate their journey through natural conversation.",
+    "ndaNote": "Placeholder — Michael to fill in approved project description and assets.",
+    "heroMedia": { "type": "placeholder", "note": "TODO: Add approved hero image", "aspectRatio": "16/9" },
+    "services": ["Conversational AI", "Product Design", "Multimodal Design"]
+  },
+  {
+    "id": "jbl-authentics",
+    "slug": "jbl-authentics",
+    "contentType": "case-study",
+    "tier": 3,
+    "featured": false,
+    "title": "JBL Authentics — Multi-Agent Speaker",
+    "subtitle": "Designing the AI layer for a premium speaker system.",
+    "client": "JBL",
+    "role": "AI Experience Designer",
+    "year": 2024,
+    "discipline": ["Product Design", "Conversational AI", "Multimodal Design"],
+    "sector": "Consumer AI App",
+    "type": "Case Study",
+    "tags": ["JBL", "Audio", "Consumer AI", "Multi-Agent", "Product Design"],
+    "shortDescription": "Defined the AI agent experience for JBL Authentics — a multi-agent speaker system designed for the home.",
+    "ndaNote": "Placeholder — Michael to fill in approved project description and assets.",
+    "heroMedia": { "type": "placeholder", "note": "TODO: Add approved hero image", "aspectRatio": "16/9" },
+    "services": ["Multimodal Design", "Conversational AI", "Product Design"]
+  }
+]

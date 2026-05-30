@@ -1,65 +1,173 @@
-import Image from "next/image";
+import Link from "next/link";
+import {
+  getFeaturedCaseStudies,
+  getFeaturedBuilds,
+} from "@/lib/projects";
+import { Reveal, RevealGroup, RevealItem } from "@/components/Reveal";
+import {
+  ProjectFeatureFlagship,
+  ProjectFeatureCard,
+} from "@/components/ProjectFeature";
+import { BuildFeature } from "@/components/BuildFeature";
+import { LogoMarquee } from "@/components/LogoMarquee";
+import { ContactCTA } from "@/components/ContactCTA";
+
+const CAPABILITIES = [
+  "Multimodal Design",
+  "Conversational AI",
+  "Product Design",
+  "Creative Direction",
+];
 
 export default function Home() {
+  const featured = getFeaturedCaseStudies();
+  const flagship = featured.find((p) => p.tier === 1);
+  const secondary = featured.filter((p) => p.tier === 2);
+  const builds = getFeaturedBuilds();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* ---- Hero ---- */}
+      <section className="relative grain overflow-hidden">
+        <div className="gutter relative z-10 flex min-h-[92svh] flex-col justify-center pt-24 pb-16">
+          <RevealGroup onLoad>
+            <RevealItem>
+              <h1 className="font-display text-hero font-bold leading-[0.86] tracking-[-0.03em]">
+                Michael Lang
+              </h1>
+            </RevealItem>
+            <RevealItem>
+              <p className="mt-8 font-display text-lead font-medium leading-[1.1] tracking-tight">
+                Multimodal AI Experience Designer
+              </p>
+            </RevealItem>
+            <RevealItem>
+              <p className="mt-4 max-w-[46ch] text-body text-muted">
+                Creating at the intersection of AI, voice, and human emotion.
+              </p>
+            </RevealItem>
+          </RevealGroup>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* ---- Featured Work ---- */}
+      <section aria-label="Featured work">
+        <div className="gutter pt-[var(--section-space)]">
+          <Reveal>
+            <p className="font-mono text-meta uppercase tracking-wider text-muted">
+              Selected Work
+            </p>
+          </Reveal>
         </div>
-      </main>
-    </div>
+
+        {flagship && (
+          <div className="mt-10">
+            <ProjectFeatureFlagship project={flagship} />
+          </div>
+        )}
+
+        {secondary.length > 0 && (
+          <div className="gutter grid gap-x-12 gap-y-12 py-16 md:grid-cols-2">
+            {secondary.map((p) => (
+              <ProjectFeatureCard key={p.id} project={p} />
+            ))}
+          </div>
+        )}
+
+        <div className="gutter pb-4">
+          <Reveal>
+            <Link
+              href="/work"
+              className="group inline-flex items-center gap-2 font-mono text-meta uppercase tracking-wider text-ink"
+            >
+              View all work
+              <span className="text-accent transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ---- Builds Strip ---- */}
+      <section aria-label="Builds" className="bg-paper">
+        <div className="gutter py-[var(--section-space)]">
+          <Reveal>
+            <p className="font-mono text-meta uppercase tracking-wider text-muted">
+              Built
+            </p>
+            <p className="mt-4 max-w-[44ch] font-display text-lead leading-[1.1] tracking-tight">
+              Working artifacts. Designed and built using AI tools.
+            </p>
+          </Reveal>
+
+          <div className="mt-10 grid gap-x-12 md:grid-cols-2">
+            {builds.map((b) => (
+              <BuildFeature key={b.id} build={b} />
+            ))}
+          </div>
+
+          <div className="border-t border-line pt-8">
+            <Link
+              href="/builds"
+              className="group inline-flex items-center gap-2 font-mono text-meta uppercase tracking-wider text-accent"
+            >
+              View all builds
+              <span className="transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- Capabilities ---- */}
+      <section className="bg-ink text-paper">
+        <div className="gutter py-16">
+          <Reveal>
+            <p className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-meta uppercase tracking-wider text-paper/70">
+              {CAPABILITIES.map((c, i) => (
+                <span key={c} className="inline-flex items-center gap-3">
+                  {c}
+                  {i < CAPABILITIES.length - 1 && (
+                    <span className="text-accent">·</span>
+                  )}
+                </span>
+              ))}
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ---- Brief Bio ---- */}
+      <section className="bg-paper">
+        <div className="gutter py-[var(--section-space)]">
+          <Reveal>
+            <p className="measure font-display text-[clamp(1.5rem,1rem+2.5vw,3rem)] font-medium leading-[1.15] tracking-tight">
+              Co-founder of Lyric Voices. Multimodal AI Experience Designer at
+              AppFolio.{" "}
+              <span className="text-muted">
+                I design with AI and build with it too.
+              </span>
+            </p>
+            <Link
+              href="/about"
+              className="group mt-8 inline-flex items-center gap-2 font-mono text-meta uppercase tracking-wider text-ink"
+            >
+              More about Michael
+              <span className="text-accent transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ---- Experience marquee ---- */}
+      <LogoMarquee />
+
+      {/* ---- Contact ---- */}
+      <ContactCTA />
+    </>
   );
 }
