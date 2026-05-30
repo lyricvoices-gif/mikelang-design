@@ -3,7 +3,8 @@ import {
   getFeaturedCaseStudies,
   getFeaturedBuilds,
 } from "@/lib/projects";
-import { Reveal, RevealGroup, RevealItem } from "@/components/Reveal";
+import { Reveal } from "@/components/Reveal";
+import { HeroStatement } from "@/components/HeroStatement";
 import {
   ProjectFeatureFlagship,
   ProjectFeatureCard,
@@ -28,27 +29,7 @@ export default function Home() {
   return (
     <>
       {/* ---- Hero ---- */}
-      <section className="relative grain overflow-hidden">
-        <div className="gutter relative z-10 flex min-h-[92svh] flex-col justify-center pt-24 pb-16">
-          <RevealGroup onLoad>
-            <RevealItem>
-              <h1 className="font-display text-hero font-bold leading-[0.86] tracking-[-0.03em]">
-                Michael Lang
-              </h1>
-            </RevealItem>
-            <RevealItem>
-              <p className="mt-8 font-display text-lead font-medium leading-[1.1] tracking-tight">
-                Multimodal AI Experience Designer
-              </p>
-            </RevealItem>
-            <RevealItem>
-              <p className="mt-4 max-w-[46ch] text-body text-muted">
-                Creating at the intersection of AI, voice, and human emotion.
-              </p>
-            </RevealItem>
-          </RevealGroup>
-        </div>
-      </section>
+      <HeroStatement />
 
       {/* ---- Featured Work ---- */}
       <section aria-label="Featured work">
