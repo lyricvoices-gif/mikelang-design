@@ -1,3 +1,7 @@
+/* Neue Montreal — neo-grotesk in the Pentagram register (Fontshare, not Google). */
+@import url("https://api.fontshare.com/v2/css?f[]=neue-montreal@400,500,600,700&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500&display=swap");
+
 @import "tailwindcss";
 
 @theme {
@@ -12,15 +16,16 @@
   --color-blue: #1e5eff;
 
   /* ---- Type families ---- */
-  --font-display: var(--font-inter-tight);
-  --font-mono: var(--font-plex-mono);
+  --font-display: "Neue Montreal", system-ui, sans-serif;
+  --font-mono: "Satoshi", system-ui, sans-serif;
 
   /* ---- Fluid type scale ---- */
   --text-meta: clamp(0.72rem, 0.7rem + 0.1vw, 0.82rem);
-  --text-body: clamp(1rem, 0.95rem + 0.25vw, 1.18rem);
+  --text-body: clamp(1rem, 0.95rem + 0.25vw, 1.12rem);
   --text-lead: clamp(1.35rem, 1rem + 1.8vw, 2.5rem);
   --text-section: clamp(2.5rem, 1.2rem + 7vw, 8rem);
   --text-hero: clamp(4rem, 1.5rem + 14vw, 15rem);
+  --text-hero-statement: clamp(2.25rem, 1.1rem + 5.5vw, 4.75rem);
 }
 
 :root {

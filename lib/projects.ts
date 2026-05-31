@@ -9,6 +9,14 @@ export type MediaEntry = {
   aspectRatio?: string;
 };
 
+/** Resolve a displayable image URL from media metadata. */
+export function resolveMediaSrc(media?: MediaEntry): string | undefined {
+  if (!media) return undefined;
+  if (media.type === "image" && media.src) return media.src;
+  if (media.existingPlaceholder) return media.existingPlaceholder;
+  return undefined;
+}
+
 export type Voice = {
   name: string;
   archetype: string;
@@ -66,6 +74,9 @@ export interface CaseStudy {
   heroMedia?: MediaEntry;
   heroVideo?: MediaEntry;
   media?: MediaEntry[];
+  /** Show on home page 3-column grid (matches live Framer order). */
+  homeGrid?: boolean;
+  homeOrder?: number;
   services?: string[];
   product?: {
     tagline: string;
@@ -117,6 +128,13 @@ export function getFeaturedCaseStudies(): CaseStudy[] {
   return getCaseStudies()
     .filter((p) => p.featured)
     .sort((a, b) => a.tier - b.tier);
+}
+
+/** Home page project grid — order matches mikelang.design. */
+export function getHomeGridProjects(): CaseStudy[] {
+  return getCaseStudies()
+    .filter((p) => p.homeGrid)
+    .sort((a, b) => (a.homeOrder ?? 99) - (b.homeOrder ?? 99));
 }
 
 export function getFeaturedBuilds(): Build[] {

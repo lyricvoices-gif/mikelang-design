@@ -185,10 +185,11 @@
     "approach": "Created guest scenarios that trained the LLM to understand customer intent and respond with warmth. Designed multimodal experiences combining voice and touch. Built story-led demonstrations to help enterprise partners see their brand through Alexa+.",
     "outcome": "Working experience guiding guests through real moments — booking tables, planning excursions, unwinding — across hospitality verticals.",
     "ndaNote": "Descriptions are high-level and process-focused per NDA. All asset slots marked for replacement.",
+    "homeGrid": true,
+    "homeOrder": 1,
     "heroMedia": {
-      "type": "placeholder",
-      "note": "TODO: Replace with approved hero image",
-      "existingPlaceholder": "https://framerusercontent.com/images/F69tlLbBKmurd0w3hO5WvCL0.jpg",
+      "type": "image",
+      "src": "https://framerusercontent.com/images/F69tlLbBKmurd0w3hO5WvCL0.jpg",
       "aspectRatio": "4/3"
     },
     "heroVideo": {
@@ -222,11 +223,12 @@
     "shortDescription": "Wrote and directed narrative vignettes showing how brands and destinations would feel as living voice experiences through Alexa+.",
     "approach": "Crafted scripted voice interactions, prototypes, and AI persona creation for hospitality and telecom verticals. Collaborated with video production agencies to creatively direct partner-facing marketing videos.",
     "ndaNote": "High-level descriptions only. All assets marked for replacement.",
+    "homeGrid": true,
+    "homeOrder": 4,
     "heroMedia": {
-      "type": "placeholder",
-      "note": "TODO: Replace with approved hero image",
-      "existingPlaceholder": "https://framerusercontent.com/images/KEwQrCVuJ38qamc6N9axKsU3F0.png",
-      "aspectRatio": "16/9"
+      "type": "image",
+      "src": "https://framerusercontent.com/images/KKJbS1QQTVolZW0sfCINIiUZU.jpg",
+      "aspectRatio": "1/1"
     },
     "services": ["Concept", "Multimodal Design", "Creative Direction", "Art Direction", "Motion Design", "Rapid Prototyping"]
   },
@@ -254,11 +256,12 @@
       "label": "View Case Study PDF",
       "url": "https://pub-a2f7fa8079ba454da09eff972db276aa.r2.dev/IPA_Case_Study.pdf"
     },
+    "homeGrid": true,
+    "homeOrder": 5,
     "heroMedia": {
-      "type": "placeholder",
-      "note": "TODO: Replace with approved hero image",
-      "existingPlaceholder": "https://framerusercontent.com/images/zkUc82SaWAucSRyWm0zF21lFS0.webp",
-      "aspectRatio": "16/9"
+      "type": "image",
+      "src": "https://framerusercontent.com/images/INihYavFKyIeZbXkNxr8MulqmS8.webp",
+      "aspectRatio": "1/1"
     },
     "heroVideo": {
       "type": "placeholder",
@@ -289,7 +292,13 @@
     "tags": ["Virgin Atlantic", "Travel", "Conversational AI", "AI Agent", "Product Design"],
     "shortDescription": "Designed the AI concierge agent experience for Virgin Atlantic, helping passengers navigate their journey through natural conversation.",
     "ndaNote": "Placeholder — Michael to fill in approved project description and assets.",
-    "heroMedia": { "type": "placeholder", "note": "TODO: Add approved hero image", "aspectRatio": "16/9" },
+    "homeGrid": true,
+    "homeOrder": 2,
+    "heroMedia": {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/lTi6YXornI2TXYW0e0ZK0GDeM.webp",
+      "aspectRatio": "3/2"
+    },
     "services": ["Conversational AI", "Product Design", "Multimodal Design"]
   },
   {
@@ -309,7 +318,13 @@
     "tags": ["JBL", "Audio", "Consumer AI", "Multi-Agent", "Product Design"],
     "shortDescription": "Defined the AI agent experience for JBL Authentics — a multi-agent speaker system designed for the home.",
     "ndaNote": "Placeholder — Michael to fill in approved project description and assets.",
-    "heroMedia": { "type": "placeholder", "note": "TODO: Add approved hero image", "aspectRatio": "16/9" },
+    "homeGrid": true,
+    "homeOrder": 3,
+    "heroMedia": {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/9Z8NFzo1XZRrwnRIFVAkikfQE.jpg",
+      "aspectRatio": "16/9"
+    },
     "services": ["Multimodal Design", "Conversational AI", "Product Design"]
   }
 ]

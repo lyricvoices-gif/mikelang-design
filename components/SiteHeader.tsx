@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { MobileMenu } from "./MobileMenu";
 
 const NAV = [
-  { href: "/work", label: "Work" },
+  { href: "/", label: "Work" },
   { href: "/builds", label: "Builds" },
   { href: "/about", label: "About" },
 ];
@@ -28,8 +28,10 @@ export function SiteHeader() {
     setMenuOpen(false);
   }, [pathname]);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/" || pathname.startsWith("/work");
+    return pathname.startsWith(href);
+  };
 
   return (
     <>
