@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import AnchorLink from "@/components/AnchorLink"
+import AutoplayVideo from "@/components/AutoplayVideo"
 import LogoCycler from "@/components/LogoCycler"
 import ScrollReveal from "@/components/ScrollReveal"
-import SpokenClock from "@/components/SpokenClock"
 
 export const metadata: Metadata = {
   title: { absolute: "Michael Lang · Intelligence Designer" },
@@ -34,7 +34,7 @@ const ALEXA = "#00A8E1" // both Alexa+ studies
 const VIRGIN = "#E10A0A" // Virgin Atlantic
 const JBL = "#cf4d1c" // Harman / JBL
 
-const ACCENTS = [SAGE, GOLD, ALEXA, ALEXA, VIRGIN, JBL]
+const ACCENTS = [SAGE, GOLD, ALEXA, VIRGIN, JBL]
 
 // ── Hero film ─────────────────────────────────────────────────────────────────
 // The Alexa+ launch campaign, from the hospitality study.
@@ -494,12 +494,8 @@ export default function PortfolioIndexPage() {
           background: DARK,
         }}
       >
-        <video
+        <AutoplayVideo
           src={HERO_FILM}
-          playsInline
-          muted
-          autoPlay
-          loop
           preload="auto"
           style={{
             position: "absolute",
@@ -602,14 +598,7 @@ export default function PortfolioIndexPage() {
                 >
                   <span className="sw-media-wrap">
                     {s.kind === "video" ? (
-                      <video
-                        src={s.src}
-                        playsInline
-                        muted
-                        autoPlay
-                        loop
-                        preload="metadata"
-                      />
+                      <AutoplayVideo src={s.src} preload="metadata" />
                     ) : (
                       /* eslint-disable-next-line @next/next/no-img-element */
                       <img src={s.src} alt={s.title} loading="lazy" />
@@ -729,7 +718,6 @@ export default function PortfolioIndexPage() {
         </div>
       </footer>
 
-      <SpokenClock />
     </article>
   )
 }
