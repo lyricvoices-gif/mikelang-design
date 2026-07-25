@@ -55,11 +55,11 @@ function badgeInk(hex: string): string {
 // vertical bands the way the reference does. Mobile stacks full-width.
 const LAYOUT = [
   { w: "30%", ml: "0%", mt: "0%" },
-  { w: "50%", ml: "48%", mt: "-19%" },
-  { w: "32%", ml: "16%", mt: "6%" },
-  { w: "26%", ml: "72%", mt: "-15%" },
-  { w: "30%", ml: "5%", mt: "5%" },
-  { w: "46%", ml: "42%", mt: "-7%" },
+  { w: "50%", ml: "48%", mt: "-13%" },
+  { w: "32%", ml: "16%", mt: "11%" },
+  { w: "26%", ml: "72%", mt: "-8%" },
+  { w: "30%", ml: "5%", mt: "10%" },
+  { w: "46%", ml: "42%", mt: "0%" },
 ]
 
 const selected = [
@@ -304,7 +304,7 @@ export default function PortfolioIndexPage() {
         @media (max-width: 899px) {
           .sw-item {
             width: 100%;
-            margin: 0 0 56px;
+            margin: 0 0 88px;
           }
         }
         /* ── About ── */
@@ -553,7 +553,7 @@ export default function PortfolioIndexPage() {
       {/* ════════════════════════════════════════════════════════════════════
           SELECTED WORK — a wall of stills; the cursor is the light
       ════════════════════════════════════════════════════════════════════ */}
-      <section id="work" className="pf-sec-work" style={{ background: DARK }}>
+      <section id="work" className="pf-sec-work" style={{ background: DARK, paddingBottom: "40px" }}>
         <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
           <div className="sw-flow">
             {selected.map((s, i) => (
