@@ -16,10 +16,17 @@ function glideTo(targetY: number) {
   const startY = window.scrollY
   const delta = targetY - startY
   if (Math.abs(delta) < 2) return
+  /* globals.css sets scroll-behavior: smooth, which would re-smooth every
+     frame of this tween and make it lag then leap. Force instant scrolling
+     for the tween's lifetime, restore after. */
+  const root = document.documentElement
+  const prevBehavior = root.style.scrollBehavior
+  root.style.scrollBehavior = "auto"
   const start = performance.now()
   let cancelled = false
   const cancel = () => {
     cancelled = true
+    root.style.scrollBehavior = prevBehavior
     window.removeEventListener("wheel", cancel)
     window.removeEventListener("touchstart", cancel)
   }
