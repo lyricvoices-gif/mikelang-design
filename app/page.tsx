@@ -65,6 +65,7 @@ const LAYOUT = [
 const selected = [
   {
     title: "Voice as a Compositional Medium",
+    tag: "Voice AI",
     company: "Lyric Voices",
     desc: "Cofounding a platform where the ethics and the product are the same argument.",
     badge: "Voice Platform",
@@ -75,6 +76,7 @@ const selected = [
   },
   {
     title: "The Vignettes and The Briefing",
+    tag: "Voice AI vignettes",
     company: "Lyric Voices",
     desc: "Building an editorial system around an AI voice platform.",
     badge: "Editorial",
@@ -85,6 +87,7 @@ const selected = [
   },
   {
     title: "The Hospitality Agent",
+    tag: "Hospitality AI Agent",
     company: "Alexa+ Enterprise",
     desc: "An Alexa+ agent that makes hotel and cruise stays feel personal.",
     badge: "Multimodal Agent",
@@ -95,6 +98,7 @@ const selected = [
   },
   {
     title: "The Vignettes",
+    tag: "Voice AI vignettes",
     company: "Alexa+ Enterprise",
     desc: "What a brand would feel like as a living voice experience.",
     badge: "Narrative Design",
@@ -105,6 +109,7 @@ const selected = [
   },
   {
     title: "Virgin Atlantic Concierge",
+    tag: "Travel AI Agent",
     company: "Virgin Atlantic",
     desc: "A travel companion that feels warm, personal, and unmistakably theirs.",
     badge: "AI Concierge",
@@ -115,7 +120,8 @@ const selected = [
   },
   {
     title: "JBL Authentics",
-    company: "Harman / JBL",
+    tag: "Multi-Agent",
+    company: "JBL Authentics",
     desc: "Two competing voice assistants, living on the same speaker.",
     badge: "Multi-Agent",
     href: "/case-studies/jbl-authentics",
@@ -636,8 +642,8 @@ export default function PortfolioIndexPage() {
                       <img src={s.src} alt={s.title} loading="lazy" />
                     )}
                     <span className="sw-overlay">
-                      <span className="sw-card-title">{s.title}</span>
-                      <span className="sw-company">{s.company}</span>
+                      <span className="sw-card-title">{s.company}</span>
+                      <span className="sw-company">{s.tag}</span>
                     </span>
                   </span>
                 </Link>
