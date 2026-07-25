@@ -1,14 +1,15 @@
 "use client"
 
-/* In-page anchor with a slow, eased scroll — the native smooth behavior is
-   too quick for the page's editorial pacing. A rAF tween (easeInOutCubic,
-   ~1.15s) glides to the target; any wheel or touch input hands control back
-   to the reader immediately. Reduced motion gets an instant jump. */
+/* In-page anchor with an eased scroll — the native smooth behavior is too
+   quick for the page's editorial pacing. The tween moves at full speed the
+   moment it starts and decelerates into the target (ease-out), so the click
+   feels immediate but the arrival is unhurried. Wheel or touch input hands
+   control back to the reader; reduced motion jumps instantly. */
 
-const DURATION_MS = 1150
+const DURATION_MS = 1100
 
-function easeInOutCubic(t: number): number {
-  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+function easeOutQuart(t: number): number {
+  return 1 - Math.pow(1 - t, 4)
 }
 
 function glideTo(targetY: number) {
@@ -28,7 +29,7 @@ function glideTo(targetY: number) {
   const step = (now: number) => {
     if (cancelled) return
     const t = Math.min(1, (now - start) / DURATION_MS)
-    window.scrollTo(0, startY + delta * easeInOutCubic(t))
+    window.scrollTo(0, startY + delta * easeOutQuart(t))
     if (t < 1) requestAnimationFrame(step)
     else cancel()
   }
