@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { PageTransition } from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mikelang.design"),
@@ -28,11 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className="flex min-h-full flex-col bg-paper text-ink">
-        <SiteHeader />
-        <PageTransition>
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </PageTransition>
+        {children}
       </body>
     </html>
   );

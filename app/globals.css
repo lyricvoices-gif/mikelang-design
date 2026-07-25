@@ -138,3 +138,294 @@ a {
     width: 100%;
   }
 }
+
+
+/* ═══ Ported from lyric-marketing: fonts + logo cycler (portfolio) ═══ */
+
+@font-face {
+  font-family: "GT Super Display";
+  src: url("/fonts/grilli-type/gt-super/GT-Super-Display-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT Super Display";
+  src: url("/fonts/grilli-type/gt-super/GT-Super-Display-Regular-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT Super Display";
+  src: url("/fonts/grilli-type/gt-super/GT-Super-Display-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT Super Display";
+  src: url("/fonts/grilli-type/gt-super/GT-Super-Display-Medium-Italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT Super Display";
+  src: url("/fonts/grilli-type/gt-super/GT-Super-Display-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT Super Display";
+  src: url("/fonts/grilli-type/gt-super/GT-Super-Display-Bold-Italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT America";
+  src: url("/fonts/grilli-type/gt-america/GT-America-Standard-Regular-Trial.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT America";
+  src: url("/fonts/grilli-type/gt-america/GT-America-Standard-Regular-Italic-Trial.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT America";
+  src: url("/fonts/grilli-type/gt-america/GT-America-Standard-Medium-Trial.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT America";
+  src: url("/fonts/grilli-type/gt-america/GT-America-Standard-Medium-Italic-Trial.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT America";
+  src: url("/fonts/grilli-type/gt-america/GT-America-Standard-Bold-Trial.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT America";
+  src: url("/fonts/grilli-type/gt-america/GT-America-Standard-Bold-Italic-Trial.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT America Mono";
+  src: url("/fonts/grilli-type/gt-america/GT-America-Mono-Regular-Trial.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/NeueMontreal-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/NeueMontreal-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/NeueMontreal-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/NeueMontreal-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/NeueMontreal-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/NeueMontreal-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/NeueMontreal-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/NeueMontreal-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --font-display: "GT Super Display", Georgia, "Times New Roman", serif;
+  --font-body: "GT America", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "GT America Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.lv-logos {
+  background: var(--bg-light);
+  /* The credit line and logo row read as a single unified block —
+     top and bottom section padding match so the block sits cleanly
+     centered between manifesto and products. */
+  padding: 96px 0;
+  overflow: hidden;
+  /* Base logo row height. Each brand's <img> applies a per-logo scale
+     multiplier on top of this so optical weight is balanced across
+     wide wordmarks and square icon-style marks. */
+  --logo-h: 26px;
+}
+
+.lv-logos-row {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.lv-logos-credit {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--olive);
+  text-align: left;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.lv-logos-mark {
+  flex-shrink: 0;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(0.62) sepia(0.05);
+  opacity: 0.85;
+}
+
+@media (min-width: 769px) {
+  .lv-logos {
+    /* Asymmetric padding — the credit + marquee row is anchored to the
+       y-position the credit line held before the redesign (128px below
+       the section's top edge). The extra bottom padding compensates
+       for the height the old stacked layout used to occupy (credit +
+       gap + marquee), so the section's overall vertical footprint
+       stays close to the pre-redesign rhythm against manifesto above
+       and products below. */
+    padding: 128px 0 178px;
+    --logo-h: 32px;
+  }
+
+  /* Desktop layout: same y-axis for credit + strip. Grid runs
+     auto | 1fr — credit takes its intrinsic width on the left
+     (anchored to the content padding's left edge, matching the
+     original pre-redesign x-position of the line), the cycler fills
+     the remaining width on the right. */
+  .lv-logos-row {
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .lv-logos-credit {
+    font-size: 15px;
+  }
+}
+
+.lv-cycler {
+  --cyc-y: calc(var(--logo-h) * 2.4);
+  --cyc-x: calc(var(--logo-h) * 7);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 24px;
+}
+
+.lv-cycler-slot {
+  position: relative;
+  /* Clip window. Tall enough that a centered mark plus its travel
+     stays inside the slot's own bounds, so the hard mask edge is
+     never visible against the cream ground. */
+  height: calc(var(--logo-h) * 2);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lv-cycler-mark {
+  max-width: 100%;
+  width: auto;
+}
+
+.lv-cycler-mark.is-shown {
+  transform: translate(0, 0);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lv-cycler-mark.is-out {
+  transition: transform 0.55s cubic-bezier(0.5, 0, 0.75, 0.5);
+}
+
+.lv-cycler-mark.is-parked {
+  transition: none;
+}
+
+.lv-cycler-slot[data-out="up"]    .lv-cycler-mark.is-out { transform: translateY(calc(-1 * var(--cyc-y))); }
+
+.lv-cycler-slot[data-out="down"]  .lv-cycler-mark.is-out { transform: translateY(var(--cyc-y)); }
+
+.lv-cycler-slot[data-out="left"]  .lv-cycler-mark.is-out { transform: translateX(calc(-1 * var(--cyc-x))); }
+
+.lv-cycler-slot[data-out="right"] .lv-cycler-mark.is-out { transform: translateX(var(--cyc-x)); }
+
+.lv-cycler-slot[data-in="top"]    .lv-cycler-mark.is-parked { transform: translateY(calc(-1 * var(--cyc-y))); }
+
+.lv-cycler-slot[data-in="bottom"] .lv-cycler-mark.is-parked { transform: translateY(var(--cyc-y)); }
+
+.lv-cycler-slot[data-in="left"]   .lv-cycler-mark.is-parked { transform: translateX(calc(-1 * var(--cyc-x))); }
+
+.lv-cycler-slot[data-in="right"]  .lv-cycler-mark.is-parked { transform: translateX(var(--cyc-x)); }
+
+@media (min-width: 769px) {
+  .lv-cycler {
+    gap: 48px;
+  }
+}
