@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import AnchorLink from "@/components/AnchorLink"
 import AutoplayVideo from "@/components/AutoplayVideo"
+import ScrollHighlightText from "@/components/ScrollHighlightText"
 import LogoCycler from "@/components/LogoCycler"
 import ScrollReveal from "@/components/ScrollReveal"
 
@@ -236,7 +237,7 @@ export default function PortfolioIndexPage() {
         }
         /* ── Section rhythm: long editorial approach into each chapter ── */
         .pf-sec-work {
-          padding: 248px 24px 0;
+          padding: 160px 24px 0;
         }
         .pf-sec-about {
           padding: 264px 24px 152px;
@@ -246,16 +247,6 @@ export default function PortfolioIndexPage() {
           .pf-sec-about { padding-top: 160px; }
         }
         /* ── Selected work wall ── */
-        .sw-head {
-          font-family: ${SANS};
-          font-size: clamp(34px, 4.4vw, 60px);
-          font-weight: 700;
-          font-style: italic;
-          line-height: 0.94;
-          letter-spacing: -0.01em;
-          color: ${LIGHT};
-          margin: 0 0 56px;
-        }
         .sw-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -268,6 +259,7 @@ export default function PortfolioIndexPage() {
         .sw-media-wrap {
           display: block;
           overflow: hidden;
+          border-radius: 8px;
           background: ${MEDIA_DARK};
         }
         .sw-media-wrap img,
@@ -280,7 +272,7 @@ export default function PortfolioIndexPage() {
         }
         .sw-card:hover .sw-media-wrap img,
         .sw-card:hover .sw-media-wrap video {
-          transform: scale(1.03);
+          transform: scale(1.04);
         }
         .sw-card-title {
           display: block;
@@ -291,42 +283,21 @@ export default function PortfolioIndexPage() {
           color: ${LIGHT};
           margin: 16px 0 0;
         }
-        .sw-card-desc {
-          display: block;
-          font-family: ${SANS};
-          font-size: 14.5px;
-          font-weight: 400;
-          line-height: 1.55;
-          color: ${LIGHT_DIM};
-          margin: 6px 0 0;
-          max-width: 46ch;
-        }
-        .sw-badge {
-          display: inline-block;
-          margin-top: 14px;
-          padding: 5px 11px;
-          border-radius: 999px;
-          background: var(--acc);
-          color: var(--badge-ink);
-          font-family: ${SANS};
-          font-size: 11.5px;
-          font-weight: 500;
-          letter-spacing: 0.01em;
-          opacity: 0;
-          transform: translateY(4px);
-          transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        .sw-card:hover .sw-badge,
-        .sw-card:focus-visible .sw-badge {
-          opacity: 1;
-          transform: none;
-        }
         /* ── About ── */
-        .ab-grid {
-          display: grid;
-          grid-template-columns: 1.25fr 0.75fr;
-          gap: 64px;
-          align-items: start;
+        .ab-eyebrow {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin: 0 0 56px;
+        }
+        .ab-lift {
+          font-family: ${SANS};
+          font-size: clamp(20px, 2.2vw, 28px);
+          font-weight: 500;
+          line-height: 1.55;
+          color: ${LIGHT};
+          max-width: 56ch;
+          margin: 0 0 36px;
         }
         .ab-head {
           font-family: ${SANS};
@@ -338,12 +309,6 @@ export default function PortfolioIndexPage() {
           color: ${LIGHT};
           margin: 0;
           max-width: 12ch;
-        }
-        .ab-copy {
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
-          max-width: 46ch;
         }
         .ab-copy p {
           font-family: ${SANS};
@@ -447,9 +412,6 @@ export default function PortfolioIndexPage() {
         @media (max-width: 1100px) {
           .sw-grid { grid-template-columns: repeat(2, 1fr); }
         }
-        @media (max-width: 900px) {
-          .ab-grid { grid-template-columns: 1fr; gap: 40px; }
-        }
         @media (max-width: 980px) {
           .pf-hero-band {
             top: auto;
@@ -462,11 +424,7 @@ export default function PortfolioIndexPage() {
           .sw-grid { grid-template-columns: 1fr; }
         }
         @media (hover: none) {
-          .sw-badge {
-            opacity: 1;
-            transform: none;
           }
-        }
         @media (max-width: 760px) {
           .pf-hero-loc,
           .pf-hero-right {
@@ -478,8 +436,7 @@ export default function PortfolioIndexPage() {
           .pf-mouse-wheel { animation: none; }
           .sw-card .sw-media-wrap img, .sw-card .sw-media-wrap video { transition: none; }
           .sw-card:hover .sw-media-wrap img, .sw-card:hover .sw-media-wrap video { transform: none; }
-          .sw-badge { transition: none; }
-        }
+          }
       `}</style>
 
       {/* ════════════════════════════════════════════════════════════════════
@@ -559,7 +516,7 @@ export default function PortfolioIndexPage() {
             About
           </AnchorLink>
           <p className="pf-hero-bio">
-            Michael Lang is a Multimodal Intelligence Designer who creates at
+            Michael is a Multimodal Intelligence Designer who creates at
             the intersection of AI, voice, and <em>human emotion</em>.
           </p>
         </div>
@@ -578,9 +535,6 @@ export default function PortfolioIndexPage() {
       ════════════════════════════════════════════════════════════════════ */}
       <section id="work" className="pf-sec-work" style={{ background: DARK }}>
         <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
-          <ScrollReveal distance={44}>
-            <h2 className="sw-head">Selected Work</h2>
-          </ScrollReveal>
           <div className="sw-grid">
             {selected.map((s, i) => (
               <ScrollReveal key={s.href} delay={i * 80} distance={32}>
@@ -589,12 +543,6 @@ export default function PortfolioIndexPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="sw-card"
-                  style={
-                    {
-                      "--acc": s.accent,
-                      "--badge-ink": badgeInk(s.accent),
-                    } as React.CSSProperties
-                  }
                 >
                   <span className="sw-media-wrap">
                     {s.kind === "video" ? (
@@ -605,8 +553,6 @@ export default function PortfolioIndexPage() {
                     )}
                   </span>
                   <span className="sw-card-title">{s.title}</span>
-                  <span className="sw-card-desc">{s.desc}</span>
-                  <span className="sw-badge">{s.badge}</span>
                 </Link>
               </ScrollReveal>
             ))}
@@ -622,28 +568,35 @@ export default function PortfolioIndexPage() {
         className="pf-sec-about"
         style={{ background: DARK }}
       >
-        <div className="ab-grid" style={{ maxWidth: "1400px", margin: "0 auto" }}>
-          <ScrollReveal distance={44}>
-            <h2 className="ab-head">Humanizing AI Experiences</h2>
-          </ScrollReveal>
-          <ScrollReveal delay={120} distance={44}>
-            <div className="ab-copy">
-              <p>
-                I&apos;m Michael Lang, a Multimodal Intelligence Designer who
-                brings human warmth to the world of GenAI. My work is all about
-                designing multimodal experiences for Alexa+ Enterprise, blending
-                product design, with storytelling and business vision.
-              </p>
-              <p>
-                When a hotel group or travel brand wants to imagine their own
-                Alexa+ powered experience, I create the story that makes it real.
-                I write vignettes, design interactions, and direct creative
-                videos that help partners see how Alexa+ can transform guest
-                experiences. It&apos;s not just about the tech, it&apos;s about
-                making every interaction feel human, memorable, and meaningful.
-              </p>
+        <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
+          <ScrollReveal>
+            <div className="ab-eyebrow">
+              <span
+                aria-hidden="true"
+                style={{ width: "7px", height: "7px", borderRadius: "50%", background: SAGE }}
+              />
+              <span className="pf-runhead" style={{ color: LIGHT }}>
+                Humanizing AI Experiences
+              </span>
             </div>
           </ScrollReveal>
+          <ScrollHighlightText className="ab-lift">
+            Michael is a Multimodal Intelligence Designer who brings human
+            warmth and narrative clarity to the world of GenAI. He focuses on
+            designing multimodal experiences for Alexa+ Enterprise agents,
+            blending product design, storytelling, and business vision to help
+            partners imagine what&apos;s possible.
+          </ScrollHighlightText>
+          <ScrollHighlightText className="ab-lift">
+            When a hotel group, consumer tech, or travel Enterprise wants to
+            envision its own Alexa+ powered AI agent, he creates the artifacts
+            that make the experience tangible. He crafts vignettes, builds the
+            agent&apos;s persona and conversational workflows, and directs
+            creative videos that show partners how an Alexa+ powered agent can
+            elevate their customers experience. For him, it&apos;s never just
+            about the technology. It&apos;s about making every moment feel
+            human, memorable, and meaningful.
+          </ScrollHighlightText>
         </div>
         <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
           <ScrollReveal distance={36}>
