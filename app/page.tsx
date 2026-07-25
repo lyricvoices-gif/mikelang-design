@@ -194,6 +194,11 @@ export default function PortfolioIndexPage() {
         .pf-hero-link:hover {
           color: ${LIGHT};
         }
+        .pf-hero-topnav {
+          display: none;
+          align-items: center;
+          gap: 20px;
+        }
         .pf-hero-bio {
           font-family: ${SANS};
           font-size: 17px;
@@ -483,8 +488,12 @@ export default function PortfolioIndexPage() {
           }
         @media (max-width: 760px) {
           .pf-hero-loc,
-          .pf-hero-right {
+          .pf-hero-right,
+          .pf-hero-bandlink {
             display: none;
+          }
+          .pf-hero-topnav {
+            display: flex;
           }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -552,6 +561,14 @@ export default function PortfolioIndexPage() {
           <span className="pf-runhead pf-hero-right" style={{ color: LIGHT_DIM }}>
             Index of Work · 2024–2026
           </span>
+          <span className="pf-hero-topnav">
+            <AnchorLink href="#work" className="pf-hero-link">
+              Work
+            </AnchorLink>
+            <AnchorLink href="#about" className="pf-hero-link">
+              About
+            </AnchorLink>
+          </span>
         </div>
 
         {/* The band: name, sections, bio */}
@@ -565,10 +582,10 @@ export default function PortfolioIndexPage() {
               Intelligence Designer
             </span>
           </div>
-          <AnchorLink href="#work" className="pf-hero-link">
+          <AnchorLink href="#work" className="pf-hero-link pf-hero-bandlink">
             Work
           </AnchorLink>
-          <AnchorLink href="#about" className="pf-hero-link">
+          <AnchorLink href="#about" className="pf-hero-link pf-hero-bandlink">
             About
           </AnchorLink>
           <p className="pf-hero-bio">
