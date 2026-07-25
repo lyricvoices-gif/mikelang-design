@@ -510,7 +510,7 @@ export default function PortfolioIndexPage() {
               ))}
             </span>
             <span className="pf-runhead pf-hero-loc" style={{ color: LIGHT }}>
-              Based in Atlanta, GA
+              Atlanta, GA
             </span>
           </span>
           <span className="pf-runhead pf-hero-right" style={{ color: LIGHT_DIM }}>
