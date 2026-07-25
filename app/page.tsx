@@ -65,6 +65,7 @@ const LAYOUT = [
 const selected = [
   {
     title: "Voice as a Compositional Medium",
+    company: "Lyric Voices",
     desc: "Cofounding a platform where the ethics and the product are the same argument.",
     badge: "Voice Platform",
     href: "/case-studies/lyric",
@@ -74,6 +75,7 @@ const selected = [
   },
   {
     title: "The Vignettes and The Briefing",
+    company: "Lyric Voices",
     desc: "Building an editorial system around an AI voice platform.",
     badge: "Editorial",
     href: "/case-studies/vignettes",
@@ -83,6 +85,7 @@ const selected = [
   },
   {
     title: "The Hospitality Agent",
+    company: "Alexa+ Enterprise",
     desc: "An Alexa+ agent that makes hotel and cruise stays feel personal.",
     badge: "Multimodal Agent",
     href: "/case-studies/alexa-plus-hospitality",
@@ -92,6 +95,7 @@ const selected = [
   },
   {
     title: "The Vignettes",
+    company: "Alexa+ Enterprise",
     desc: "What a brand would feel like as a living voice experience.",
     badge: "Narrative Design",
     href: "/case-studies/alexa-plus-vignettes",
@@ -101,6 +105,7 @@ const selected = [
   },
   {
     title: "Virgin Atlantic Concierge",
+    company: "Virgin Atlantic",
     desc: "A travel companion that feels warm, personal, and unmistakably theirs.",
     badge: "AI Concierge",
     href: "/case-studies/va-concierge-amelia",
@@ -110,6 +115,7 @@ const selected = [
   },
   {
     title: "JBL Authentics",
+    company: "Harman / JBL",
     desc: "Two competing voice assistants, living on the same speaker.",
     badge: "Multi-Agent",
     href: "/case-studies/jbl-authentics",
@@ -268,6 +274,7 @@ export default function PortfolioIndexPage() {
           text-decoration: none;
         }
         .sw-media-wrap {
+          position: relative;
           display: block;
           overflow: hidden;
           border-radius: 8px;
@@ -279,20 +286,49 @@ export default function PortfolioIndexPage() {
           width: 100%;
           aspect-ratio: 3 / 2;
           object-fit: cover;
-          transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+          transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+            filter 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .sw-item:hover .sw-media-wrap img,
         .sw-item:hover .sw-media-wrap video {
           transform: scale(1.04);
+          filter: brightness(0.9);
+        }
+        .sw-media-wrap::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 38%;
+          background: linear-gradient(transparent, rgba(10, 10, 9, 0.5));
+          pointer-events: none;
+        }
+        .sw-overlay {
+          position: absolute;
+          left: 18px;
+          right: 18px;
+          bottom: 15px;
+          z-index: 1;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          gap: 16px;
         }
         .sw-card-title {
-          display: block;
           font-family: ${SANS};
-          font-size: 17px;
+          font-size: 15.5px;
           font-weight: 500;
-          line-height: 1.35;
-          color: ${LIGHT};
-          margin: 14px 0 0;
+          line-height: 1.3;
+          color: #ffffff;
+        }
+        .sw-company {
+          font-family: ${SANS};
+          font-size: 12.5px;
+          font-weight: 400;
+          line-height: 1.3;
+          color: rgba(255, 255, 255, 0.85);
+          white-space: nowrap;
         }
         @media (min-width: 900px) {
           .sw-item {
@@ -582,8 +618,11 @@ export default function PortfolioIndexPage() {
                       /* eslint-disable-next-line @next/next/no-img-element */
                       <img src={s.src} alt={s.title} loading="lazy" />
                     )}
+                    <span className="sw-overlay">
+                      <span className="sw-card-title">{s.title}</span>
+                      <span className="sw-company">{s.company}</span>
+                    </span>
                   </span>
-                  <span className="sw-card-title">{s.title}</span>
                 </Link>
               </ScrollReveal>
             ))}
