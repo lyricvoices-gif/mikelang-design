@@ -50,6 +50,18 @@ function badgeInk(hex: string): string {
   return lum > 150 ? "#131210" : "#F5F3EF"
 }
 
+// Scattered collage placement, in fractions of the container. Widths vary,
+// items alternate left and right, and negative top margins overlap the
+// vertical bands the way the reference does. Mobile stacks full-width.
+const LAYOUT = [
+  { w: "30%", ml: "0%", mt: "0%" },
+  { w: "50%", ml: "48%", mt: "-19%" },
+  { w: "32%", ml: "16%", mt: "6%" },
+  { w: "26%", ml: "72%", mt: "-15%" },
+  { w: "30%", ml: "5%", mt: "5%" },
+  { w: "46%", ml: "42%", mt: "-7%" },
+]
+
 const selected = [
   {
     title: "Voice as a Compositional Medium",
@@ -247,12 +259,11 @@ export default function PortfolioIndexPage() {
           .pf-sec-about { padding-top: 160px; }
         }
         /* ── Selected work wall ── */
-        .sw-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 48px 24px;
+        .sw-flow {
+          max-width: 1400px;
+          margin: 0 auto;
         }
-        .sw-card {
+        .sw-item {
           display: block;
           text-decoration: none;
         }
@@ -270,8 +281,8 @@ export default function PortfolioIndexPage() {
           object-fit: cover;
           transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .sw-card:hover .sw-media-wrap img,
-        .sw-card:hover .sw-media-wrap video {
+        .sw-item:hover .sw-media-wrap img,
+        .sw-item:hover .sw-media-wrap video {
           transform: scale(1.04);
         }
         .sw-card-title {
@@ -281,7 +292,20 @@ export default function PortfolioIndexPage() {
           font-weight: 500;
           line-height: 1.35;
           color: ${LIGHT};
-          margin: 16px 0 0;
+          margin: 14px 0 0;
+        }
+        @media (min-width: 900px) {
+          .sw-item {
+            width: var(--w);
+            margin-left: var(--ml);
+            margin-top: var(--mt);
+          }
+        }
+        @media (max-width: 899px) {
+          .sw-item {
+            width: 100%;
+            margin: 0 0 56px;
+          }
         }
         /* ── About ── */
         .ab-eyebrow {
@@ -409,9 +433,6 @@ export default function PortfolioIndexPage() {
           80%, 94% { background: ${JBL}; }
           100% { background: ${SAGE}; }
         }
-        @media (max-width: 1100px) {
-          .sw-grid { grid-template-columns: repeat(2, 1fr); }
-        }
         @media (max-width: 980px) {
           .pf-hero-band {
             top: auto;
@@ -421,7 +442,6 @@ export default function PortfolioIndexPage() {
           }
         }
         @media (max-width: 680px) {
-          .sw-grid { grid-template-columns: 1fr; }
         }
         @media (hover: none) {
           }
@@ -535,14 +555,25 @@ export default function PortfolioIndexPage() {
       ════════════════════════════════════════════════════════════════════ */}
       <section id="work" className="pf-sec-work" style={{ background: DARK }}>
         <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
-          <div className="sw-grid">
+          <div className="sw-flow">
             {selected.map((s, i) => (
-              <ScrollReveal key={s.href} delay={i * 80} distance={32}>
+              <ScrollReveal
+                key={s.href}
+                distance={28}
+                scale={0.95}
+                style={
+                  {
+                    "--w": LAYOUT[i].w,
+                    "--ml": LAYOUT[i].ml,
+                    "--mt": LAYOUT[i].mt,
+                  } as React.CSSProperties
+                }
+              >
                 <Link
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="sw-card"
+                  className="sw-item"
                 >
                   <span className="sw-media-wrap">
                     {s.kind === "video" ? (

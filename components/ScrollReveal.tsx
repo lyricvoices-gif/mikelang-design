@@ -11,6 +11,8 @@ interface Props {
   /* Travel distance in px for the entrance (default matches the original
      20px rise; larger values read as a more pronounced scroll-up). */
   distance?: number
+  /* Starting scale for the entrance (default 1 = no scaling). */
+  scale?: number
 }
 
 export default function ScrollReveal({
@@ -20,6 +22,7 @@ export default function ScrollReveal({
   display = "block",
   style,
   distance = 20,
+  scale = 1,
 }: Props) {
   const ref = React.useRef<HTMLDivElement>(null)
   const [visible, setVisible] = React.useState(false)
@@ -51,8 +54,9 @@ export default function ScrollReveal({
     return () => observer.disconnect()
   }, [delay])
 
+  const scalePart = scale !== 1 ? ` scale(${scale})` : ""
   const translateStart =
-    from === "left" ? "translateX(-24px)" : `translateY(${distance}px)`
+    (from === "left" ? "translateX(-24px)" : `translateY(${distance}px)`) + scalePart
 
   return (
     <div
